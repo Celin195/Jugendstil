@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jugendstil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="corner-deco">
+    <img src="images/eckee.png" alt="ecke">
+  </div>
+
+  <nav class="top-nav">
+    <a href="#quellen" class="nav-link">Quellen</a>
+  </nav>
+
+  <section class="jugendstil">
+    <h1>Jugendstil ist aber auch:</h1>
+
+    <!-- MINI EINORDNUNG -->
+    <p class="intro">
+      Jugendstil zeigt sich nicht nur in der Malerei, sondern auch in Design,
+      Architektur und Alltagsobjekten. Charakteristisch sind organische Formen,
+      Ornamente und die Nähe zur Natur.
+    </p>
+
+    <div class="gallery">
+
+      <div class="item left info-item large shift-left">
+        <input type="checkbox" id="img1" class="toggle">
+        <label for="img1" class="image-block">
+          <img src="images/Girl.png" alt="">
+          <p class="label">La danse – Alfons Mucha</p>
+        </label>
+        <div class="info-text">
+          vollständiges Bild vom Plakat
+        </div>
+      </div>
+
+      <div class="item right info-item">
+        <input type="checkbox" id="img2" class="toggle">
+        <label for="img2" class="image-block">
+          <img src="images/Gold.png" alt="Klimt">
+          <p class="label">Adele Bloch-Bauer I – Gustav Klimt</p>
+        </label>
+        <div class="info-text">
+          <p>Dekoration von Flächen</p>
+          Verwendung wertvoller Materialien,
+          ornamentale Abstraktionen,
+          geometrische Formen und Frauendarstellungen
+        </div>
+      </div>
+
+      <div class="item left info-item shift-left">
+        <input type="checkbox" id="img3" class="toggle">
+        <label for="img3" class="image-block">
+          <img src="images/Stuhl2.png" alt="Stuhl">
+          <p class="label">Armlehnstuhl mit Bezug – Henry van de Velde</p>
+        </label>
+        <div class="info-text">
+          Verwendung von Ornamenten und floralen Mustern,
+          Bezug zur Natur, originell, individuell und modern
+        </div>
+      </div>
+
+      <div class="item right info-item">
+        <input type="checkbox" id="img4" class="toggle">
+        <label for="img4" class="image-block">
+          <img src="images/Lampe.png" alt="Glas">
+          <p class="label">Glas-Tischlampe – Émile Gallé</p>
+        </label>
+        <div class="info-text">
+          Florale Motive, dekorative Flächen und ornamental gestaltetes Glas
+        </div>
+      </div>
+
+      <div class="item center info-item shift-left">
+        <input type="checkbox" id="img5" class="toggle">
+        <label for="img5" class="image-block">
+          <img src="images/Barcelona.png" alt="Architektur">
+          <p class="label">La Sagrada Família – Antoni Gaudí</p>
+        </label>
+        <div class="info-text">
+          Dekorative Flächen und Formen, inspiriert aus der Natur
+        </div>
+      </div>
+
+    </div>
+
+    <section id="quellen" class="quellen">
+      <h2>Quellen</h2>
+      <ul>
+        <li>Alfons Mucha – La danse</li>
+        <li>Gustav Klimt – Adele Bloch-Bauer I</li>
+        <li>Henry van de Velde – Armlehnstuhl mit Bezug</li>
+        <li>Émile Gallé – Glas-Tischlampe</li>
+        <li>Antoni Gaudí – Sagrada Família</li>
+      </ul>
+    </section>
+
+  </section>
+
+  <!-- DEIN BESTEHENDES JS – UNVERÄNDERT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const items = document.querySelectorAll('.item');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      items.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <div class="corner-deco-bottom">
+    <img src="images/eckee.png" alt="ecke">
+  </div>
+
+</body>
+</html>
